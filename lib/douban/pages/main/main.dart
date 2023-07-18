@@ -19,7 +19,7 @@ class _HYMainScreenState extends State<HYMainScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      //根据不同的index显示不同的页面
+      //IndexedStack根据不同的index显示children中的不同的页面
       body: IndexedStack(
         index: _currentpage,
         /*抽取成数组pages*/
