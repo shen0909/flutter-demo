@@ -10,7 +10,7 @@ import 'ViewModel/user_view_model.dart';
 * Tep2 在APP最顶层包裹一个provider======>ChangeNotifierProvider===>Widget树中提供数据（状态）的地方，会在其中创建对应的ChangeNotifier
 * */
 /*
-* 1、创建自己需要共享的数据===>vi  ewModel
+* 1、创建自己需要共享的数据===>viewModel
 * 2、在应用程序的顶层包裹ChangeNotifierProvider
 * 3、在其他位置使用共享的数据
 * 3.1  Provider.of====>数据发生改变，使用该方法的整个build都会被重新执行
@@ -122,8 +122,11 @@ class HYshow02 extends StatelessWidget {
     return Card(
         color: Colors.blue,
         child: Consumer<HYCounterViewModel>(
-          builder: (context,counterVM2,child){
-            return Text("当前计数：${counterVM2.counter}",style: TextStyle(fontSize: 30),);//返回一个widget
+          builder: (
+              context,
+              counterVM2,
+              child){
+              return Text("当前计数：${counterVM2.counter}",style: TextStyle(fontSize: 30),);//返回一个widget
           },
         )
     );
@@ -138,8 +141,11 @@ class HYshow03 extends StatelessWidget {
     return Card(
       color: Colors.orange,
       child: Consumer<UserInfoModel>(
-        builder: (context,userinfoVM,child){
-          return Text("nickName:${userinfoVM.user.nickname},level:${userinfoVM.user.level}",style: TextStyle(fontSize: 30),);
+        builder: (
+            context,
+            userinfoVM,
+            child){
+              return Text("nickName:${userinfoVM.user.nickname},level:${userinfoVM.user.level}",style: TextStyle(fontSize: 30),);
         },
       ),
     );
@@ -154,8 +160,12 @@ class HYshow04 extends StatelessWidget {
     return Card(
       color: Colors.orange,
       child: Consumer2<UserInfoModel,HYCounterViewModel>(
-        builder: (context,userinfoVM,counterVM4,child){
-          return Text("nickName:${userinfoVM.user.nickname},level:${userinfoVM.user.level},counter:${counterVM4.counter}",style: TextStyle(fontSize: 30),);
+        builder: (
+            context,
+            userinfoVM,
+            counterVM4,
+            child){
+            return Text("nickName:${userinfoVM.user.nickname},level:${userinfoVM.user.level},counter:${counterVM4.counter}",style: TextStyle(fontSize: 30),);
         },
       ),
     );

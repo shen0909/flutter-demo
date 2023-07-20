@@ -10,8 +10,7 @@ int _counter=99;
 
   int get counter => _counter;//一般就是本来的_counter
 
-  set
-  counter(int value) {
+  set counter(int value) {
     _counter = value;
     notifyListeners();//通知所有的监听者Consumer进行数据更新
   } //私有变量
