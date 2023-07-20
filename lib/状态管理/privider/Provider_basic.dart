@@ -1,9 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutterapp/%E7%8A%B6%E6%80%81%E7%AE%A1%E7%90%86/ViewModel/counter_view_model.dart';
+import 'package:flutterapp/%E7%8A%B6%E6%80%81%E7%AE%A1%E7%90%86/privider/ViewModel/counter_view_model.dart';
 import 'package:provider/provider.dart';
-
-import 'ViewModel/user_view_model.dart';
 /*状态管理
 * 2、provider
 * Tep1 添加provider依赖
@@ -18,13 +16,9 @@ import 'ViewModel/user_view_model.dart';
 * 3.3  Selector*/
 main(){
   runApp(
-      MultiProvider(
-        providers: [
-          ChangeNotifierProvider(create: (ctx)=>HYCounterViewModel()),
-          ChangeNotifierProvider(create: (ctx)=>UserInfoModel()),
-        ],
-        child: MyApp(),
-     )
+    ChangeNotifierProvider(
+        create:(cxt)=>HYCounterViewModel(),//要求返回一个HYCounterViewModel
+        child: MyApp(),)
   );
 }
 
@@ -68,12 +62,10 @@ class HYhomePage extends StatelessWidget {
             children: [
               HYshow01(),
               HYshow02(),
-              HYshow03(),
-              HYshow04(),
             ],
           ),
         ),
-        /*修改数据===>Consumer
+        /*3.2 修改数据===>Consumer
     * Consumer的builder方法解析：
     * 参数一：context，每个build方法都会有上下文，目的是知道当前树的位置
     * 参数二：ChangeNotifier对应的实例，也是我们在builder函数中主要使用的对象
@@ -120,54 +112,12 @@ class HYshow02 extends StatelessWidget {
     /*3.2 包裹一个consumer*/
     //int ? counter=HYcounterWidget.of(context)?.counter;
     return Card(
-        color: Colors.blue,
-        child: Consumer<HYCounterViewModel>(
-          builder: (
-              context,
-              counterVM2,
-              child){
-              return Text("当前计数：${counterVM2.counter}",style: TextStyle(fontSize: 30),);//返回一个widget
-          },
-        )
-    );
-  }
-}
-
-class HYshow03 extends StatelessWidget {
-  const HYshow03({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Card(
-      color: Colors.orange,
-      child: Consumer<UserInfoModel>(
-        builder: (
-            context,
-            userinfoVM,
-            child){
-              return Text("nickName:${userinfoVM.user.nickname},level:${userinfoVM.user.level}",style: TextStyle(fontSize: 30),);
+      color: Colors.blue,
+      child: Consumer<HYCounterViewModel>(
+        builder: (context,counterVM2,child){
+          return Text("当前计数：${counterVM2.counter}",style: TextStyle(fontSize: 30),);//返回一个widget
         },
-      ),
-    );
-  }
-}
-
-/*使用两个model中的数据*/
-class HYshow04 extends StatelessWidget {
-
-  @override
-  Widget build(BuildContext context) {
-    return Card(
-      color: Colors.orange,
-      child: Consumer2<UserInfoModel,HYCounterViewModel>(
-        builder: (
-            context,
-            userinfoVM,
-            counterVM4,
-            child){
-            return Text("nickName:${userinfoVM.user.nickname},level:${userinfoVM.user.level},counter:${counterVM4.counter}",style: TextStyle(fontSize: 30),);
-        },
-      ),
+    )
     );
   }
 }

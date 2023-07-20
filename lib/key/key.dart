@@ -6,7 +6,6 @@ main()=>runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -56,7 +55,7 @@ class _keyTransferState extends State<keyTransfer> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              /*Row(
+              Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text("无状态——>"),
@@ -67,7 +66,7 @@ class _keyTransferState extends State<keyTransfer> {
                   ),
                   SizedBox(height: 20,),
                 ],
-              ),*/
+              ),
               SizedBox(height: 20,),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,

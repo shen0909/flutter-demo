@@ -1,3 +1,6 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+
 /*1、状态管理
 *
 * 状态：需要维护的数据
@@ -10,10 +13,6 @@
 * 共享状态管理
 * InheritedWidget可以实现跨组件之间的数据传递
 * */
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-
-
 
 /*状态管理
 * 1、定义一个继承自InheritedWidget的类
