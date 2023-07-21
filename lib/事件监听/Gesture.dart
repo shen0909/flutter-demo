@@ -1,12 +1,11 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+
 /*手势Gesture
 * 点击
 * 双击
 * 长按
 * ……*/
-
-
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 
 main(){runApp((MyApp()));}
 

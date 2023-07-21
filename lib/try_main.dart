@@ -1,13 +1,11 @@
 import 'dart:async';
 import 'dart:convert';
 
-import 'package:flutter/material.dart';
-import 'package:flutterapp/network/http_request.dart';
 
 Future<Album> fetchAlbum() async {
   var dio;
-  final response =
-  await dio.get('https://jsonplaceholder.typicode.com/albums/1');
+  final response = await dio.get('https://jsonplaceholder.typicode.com/albums/1');
+
   //HttpRequest.request('https://jsonplaceholder.typicode.com/albums/1');
   if (response.statusCode == 200) {
     // If the server did return a 200 OK response,

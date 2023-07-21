@@ -1,9 +1,3 @@
-/*Route：一个页面要想被路由统一管理，必须包装为一个Route
-*但是Route是一个抽象类，所以它是不能实例化的
-*所以查看MaterialPageRoute来使用
-*
-* Navigator：管理所有的Route的Widget，通过一个Stack(栈)来进行管理的，
-* 开发中不需要手动创建Navigator(默认有)*/
 import 'dart:ffi';
 
 import 'package:flutter/cupertino.dart';
@@ -12,6 +6,13 @@ import 'package:flutterapp/%E8%B7%AF%E7%94%B1%E5%AF%BC%E8%88%AA/detail.dart';
 import 'package:flutterapp/%E8%B7%AF%E7%94%B1%E5%AF%BC%E8%88%AA/erro_page.dart';
 import 'package:flutterapp/%E8%B7%AF%E7%94%B1%E5%AF%BC%E8%88%AA/router/router.dart';
 import 'About_page.dart';
+
+/*Route：一个页面要想被路由统一管理，必须包装为一个Route
+*但是Route是一个抽象类，所以它是不能实例化的
+*所以查看MaterialPageRoute来使用
+*
+* Navigator：管理所有的Route的Widget，通过一个Stack(栈)来进行管理的，
+* 开发中不需要手动创建Navigator(默认有)*/
 
 main()=>runApp(MyApp());
 

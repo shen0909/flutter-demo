@@ -170,6 +170,7 @@ class demo4Selector extends StatelessWidget {
       }, );
   }
 }
+
 //真正的数据存放处
 class favorite extends ChangeNotifier{
 
