@@ -42,6 +42,7 @@ dependencies:
   path_provider: ^2.0.10
   random_color: ^1.0.5
   go_router:
+  calendar_date_picker2: ^0.5.2
   http: ^0.13.5
 
 
